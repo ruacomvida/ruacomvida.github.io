@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<title>{{ site.title }} | {{ page.title }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/assets/css/normalize.css">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="icon" type="image/png" href="/favicon.png">
+<meta name="theme-color" content="#e20049">
+
+<body>
+  <header>
+    <img src="{{ site.logo }}">
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Início</a>
+        </li>
+        <li>
+          <a href="/arquivo">Arquivo</a>
+        </li>
+        <li>
+          <a href="/sobre">Sobre</a>
+        </li>
+        <li>
+          <a href="/contacto">Contacto</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>{{ page.title }}</h1>
+    {{ content }}
+  </main>
+  <footer>
+    <p>
+      <small>
+        Copyright © 2019 Afonso Cerejeira. Todos os direitos reservados.
+      </small>
+    </p>
+  </footer>
+</body>
+
+</html>
