@@ -1,0 +1,123 @@
+---
+---
+
+@import "normalize";
+
+$colors: (
+  primary: #e20049,
+  secondary: #f1768d,
+  light: #fcd7c3,
+  dark: #f9bdb5,
+  white: #ffffff,
+);
+
+$type-scale: (
+  f1: 3rem,
+  f2: 2.25rem,
+  f3: 1.5rem,
+  f4: 1.25rem,
+  f5: 1rem,
+  f6: .875rem,
+  f7: .75rem,
+);
+
+$line-height: (
+  solid: 1,
+  title: 1.25,
+  copy: 1.5,
+);
+
+$letter-spacing: (
+  tracked: .1em,
+  tracked-tight: -.05em,
+  tracked-mega: .25em,
+);
+
+$spacing: (
+  none: 0,
+  xs: .25rem,
+  sm: .5rem,
+  md: 1rem,
+  lg: 2rem,
+  xl: 4rem,
+  xxl: 8rem,
+  xxxl: 16rem,
+);
+
+body {
+  background-color: map-get($colors, "light"); 
+}
+
+body > header {
+  background-color: map-get($colors, "primary");
+  border-bottom: map-get($spacing, "xs") solid map-get($colors, "dark");
+  padding-bottom: map-get($spacing, "xs");
+  padding-top:  map-get($spacing, "lg");
+  text-align: center;
+
+  img {
+    margin-bottom: map-get($spacing, "md");
+    max-height: map-get($spacing, "xxl");
+    max-width: 100%;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 0;
+
+    li {
+      display: inline-block;
+      padding-left: map-get($spacing, "md");
+      padding-right: map-get($spacing, "md");
+
+      a {
+        color: map-get($colors, "light");
+        font-size: map-get($type-scale, "f8");
+        letter-spacing: map-get($letter-spacing, "tracked");
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      a:hover {
+        border-bottom: 2px solid map-get($colors, "light");
+        padding-bottom: map-get($spacing, "xs");
+      }
+
+      a.active {
+        border-bottom: 2px solid map-get($colors, "light");
+        padding-bottom: map-get($spacing, "xs");  
+      }
+    }
+  }
+}
+
+body > main {
+  padding-bottom: map-get($spacing, "lg");
+  padding-top: map-get($spacing, "lg");
+}
+
+body > footer > p {
+  font-size: map-get($type-scale, "f6");
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  letter-spacing: map-get($letter-spacing, "tracked");
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: map-get($type-scale, "f2");
+  text-align: center;
+}
+
+h2 {
+  font-size: map-get($type-scale, "f3");
+}
+
+h3 {
+  font-size: map-get($type-scale, "f4");
+}
