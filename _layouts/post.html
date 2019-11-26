@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<article class="post">
+  <header>
+    <h1>{{ page.title }}</h1>
+    <time datetime="{{ page.date }}">
+      {% include date.html content=page.date %}
+    </time>
+  </header>
+  <hr style="background: url({{ page.image | relative_url }}) no-repeat center; background-size: cover" />
+  {{ page.content }}
+</article>
+
