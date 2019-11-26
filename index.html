@@ -2,3 +2,26 @@
 title: Início
 layout: default
 ---
+
+{% if site.posts.size > 0 %}
+<section class="posts">
+  <h2>Publicações</h2>
+
+  <ul>
+    {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url | relative_url }}">
+        <figure> 
+          <img src="{{ post.image | relative_url }}" />
+          <figcaption>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.content | truncate: 200 }}</p>
+            <small>{% include date.html content=post.date %}</small>
+          </figcaption>
+        </figure>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

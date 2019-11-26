@@ -1,123 +1,155 @@
 ---
 ---
 
-@import "normalize";
+@import "tachyons";
 
-$colors: (
-  primary: #e20049,
-  secondary: #f1768d,
-  light: #fcd7c3,
-  dark: #f9bdb5,
-  white: #ffffff,
-);
-
-$type-scale: (
-  f1: 3rem,
-  f2: 2.25rem,
-  f3: 1.5rem,
-  f4: 1.25rem,
-  f5: 1rem,
-  f6: .875rem,
-  f7: .75rem,
-);
-
-$line-height: (
-  solid: 1,
-  title: 1.25,
-  copy: 1.5,
-);
-
-$letter-spacing: (
-  tracked: .1em,
-  tracked-tight: -.05em,
-  tracked-mega: .25em,
-);
-
-$spacing: (
-  none: 0,
-  xs: .25rem,
-  sm: .5rem,
-  md: 1rem,
-  lg: 2rem,
-  xl: 4rem,
-  xxl: 8rem,
-  xxxl: 16rem,
-);
+// Colors
+$primary: #e20049;
+$secondary: #f1768d;
+$light: #fcd7c3;
+$dark: #f9bdb5;
+$white: #ffffff;
 
 body {
-  background-color: map-get($colors, "light"); 
+  @extend .system-serif;
+  background-color: $light;
 }
 
 body > header {
-  background-color: map-get($colors, "primary");
-  border-bottom: map-get($spacing, "xs") solid map-get($colors, "dark");
-  padding-bottom: map-get($spacing, "xs");
-  padding-top:  map-get($spacing, "lg");
-  text-align: center;
+  @extend .bb;
+  @extend .pb2;
+  @extend .pt4;
+  @extend .tc;
+  background-color: $primary;
+  border-bottom-color: $dark;
 
   img {
-    margin-bottom: map-get($spacing, "md");
-    max-height: map-get($spacing, "xxl");
-    max-width: 100%;
+    @extend .h4;
+    @extend .mb2;
+    @extend .mw-100;
   }
 
   ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-left: 0;
+    @extend .pl0;
 
     li {
-      display: inline-block;
-      padding-left: map-get($spacing, "md");
-      padding-right: map-get($spacing, "md");
+      @extend .dib;
+      @extend .ph3;
 
       a {
-        color: map-get($colors, "light");
-        font-size: map-get($type-scale, "f8");
-        letter-spacing: map-get($letter-spacing, "tracked");
-        text-decoration: none;
-        text-transform: uppercase;
+        @extend .f5;
+        @extend .link;
+        @extend .tracked;
+        @extend .ttu;
+        color: $light;
       }
 
       a:hover {
-        border-bottom: 2px solid map-get($colors, "light");
-        padding-bottom: map-get($spacing, "xs");
+        @extend .pb1;
+        border-bottom: 2px solid $light;
       }
 
       a.active {
-        border-bottom: 2px solid map-get($colors, "light");
-        padding-bottom: map-get($spacing, "xs");  
+        @extend .pb1;
+        border-bottom: 2px solid $light;
       }
     }
   }
 }
 
 body > main {
-  padding-bottom: map-get($spacing, "lg");
-  padding-top: map-get($spacing, "lg");
+  @extend .pt4;
 }
 
-body > footer > p {
-  font-size: map-get($type-scale, "f6");
-  text-align: center;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
-  letter-spacing: map-get($letter-spacing, "tracked");
-  text-transform: uppercase;
+body > footer {
+  @extend .f6;
+  @extend .pb3;
+  @extend .pt2;
+  @extend .tc;
 }
 
 h1 {
-  font-size: map-get($type-scale, "f2");
-  text-align: center;
+  @extend .f2;
+  @extend .normal;
+  @extend .tc;
+  @extend .tracked;
+  @extend .ttu;
 }
 
 h2 {
-  font-size: map-get($type-scale, "f3");
+  @extend .f3;
+  @extend .normal;
+  @extend .ttu;
 }
 
 h3 {
-  font-size: map-get($type-scale, "f4");
+  @extend .f3;
+  @extend .normal;
+}
+
+.posts {
+  @extend .center;
+  @extend .ph3;
+  @extend .mw7;
+
+  ul {
+    @extend .bt;
+    @extend .b--black-10;
+    @extend .pl0;
+
+    li {
+      @extend .bb;
+      @extend .b--black-10;
+      @extend .db;
+
+      a {
+        @extend .black;
+        @extend .db;
+        @extend .dim;
+        @extend .no-underline;
+        @extend .pv4;
+
+        figure {
+          @extend .flex-column;
+          @extend .flex-row-ns;
+          @extend .flex;
+          @extend .items-start;
+          @extend .ma0;
+
+          img {
+            @extend .db;
+            @extend .ma0;
+            @extend .mb0-ns;
+            @extend .mb4;
+            @extend .pr3-ns;
+            @extend .w-100;
+            @extend .w-40-ns;
+          }
+
+          figcaption {
+            @extend .pl3-ns;
+            @extend .w-100;
+            @extend .w-60-ns;
+
+            h3 {
+              @extend .mt0;
+            }
+
+            p {
+              @extend .f5-l;
+              @extend .f6;
+              @extend .lh-copy;
+            }
+
+            small {
+              @extend .black-60;
+              @extend .db;
+              @extend .lh-copy;
+              @extend .f7;
+            }
+          }
+        }
+      }
+    }
+  }
 }
