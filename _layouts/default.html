@@ -1,42 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ site.lang }}">
-<title>{{ site.title }} | {{ page.title }}</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/assets/css/normalize.css">
-<link rel="stylesheet" href="/assets/css/main.css">
-<link rel="icon" type="image/png" href="/favicon.png">
-<meta name="theme-color" content="#e20049">
+  <title>{{ site.title }} | {{ page.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <meta name="theme-color" content="#e20049" />
 
-<body>
-  <header>
-    <img src="{{ site.logo }}">
-    <nav>
-      <ul>
-        <li>
-          <a href="/" class="{% if page.title == 'Início' %}active{% endif %}">Início</a>
-        </li>
-        <li>
-          <a href="/arquivo" class="{% if page.title == 'Arquivo' %}active{% endif %}">Arquivo</a>
-        </li>
-        <li>
-          <a href="/sobre" class="{% if page.title == 'Sobre' %}active{% endif %}">Sobre</a>
-        </li>
-        <li>
-          <a href="/contacto" class="{% if page.title == 'Contacto' %}active{% endif %}">Contacto</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    {{ content }}
-  </main>
-  <footer>
-    <p>
-      <small>
-        Copyright © 2019 Afonso Cerejeira. Todos os direitos reservados.
-      </small>
-    </p>
-  </footer>
-</body>
+  <body>
+    <header>
+      <img src="{{ site.logo }}" alt="{{ site.title }}" />
+      <nav>
+        <ul>
+          {% for nav in site.navbar %}
+          <li>
+            <a
+              href="{{ nav.url | relative_url }}"
+              class="{% if page.title == nav.name %}active{% endif %}"
+              >{{ nav.name }}</a
+            >
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </header>
 
+    <main>
+      {{ content }}
+    </main>
+
+    <footer>
+      <p>
+        <small>
+          Copyright © 2019 Afonso Cerejeira. Todos os direitos reservados.
+        </small>
+      </p>
+    </footer>
+  </body>
 </html>
